@@ -11,12 +11,17 @@ export class StoreComponent {
     public selectedCategory = null;
     public productsPerPage = 4;
     public selectedPage = 1;
+    public search : string = " ";
     constructor(private repository : ProductRepository) { }
 
     get products(): Product[] {
         let pageIndex = (this.selectedPage - 1) * this.productsPerPage
         return this.repository.getProducts(this.selectedCategory)
             .slice(pageIndex, pageIndex + this.productsPerPage);
+    }
+
+    searchFunction(){
+        this.repository.getSearchProducts(this.search);
     }
     changePage(newPage: number){
         this.selectedPage = newPage;
