@@ -17,10 +17,9 @@
         </div>
         <div class = " col-9 p-2">
             <div *ngFor = "let product of products" class = "card m-1 p-1 bg-light">
-                <span class = " float-left">
-
-                </span>
+                
                 <h4>
+                    <img width = "15%" height = "15%" [src] = "product.src">
                     {{product.name}}
                     <span class = "badge badge-pill badge-primary float-right">
                         {{ product.price | currency:"USD" : "symbol" : "2.2-2" }}
