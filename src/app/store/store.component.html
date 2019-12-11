@@ -6,6 +6,9 @@
     </div>
     <div class = "row">
         <div class = "col-3 p-2 ">
+            
+            <input type="text" [(ngModel)] = "search" [ngModelOptions]="{standalone: true}" placeholder="Pesquisar">
+            <button (click) = "searchFunction()">Pesquisar</button>
             <button class="btn btn-block btn-outline-primary" (click) = "changeCategory()">
                 Home
             </button>
